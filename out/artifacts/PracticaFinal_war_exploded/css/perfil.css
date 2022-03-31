@@ -1,0 +1,43 @@
+body{
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+
+}
+
+
+.subirfoto {
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+#foto{
+    background-image: url("../images/subirfoto.png");
+    height: 80px;
+    background-size: 80px 80px;
+    padding-left: 80px;
+}
+
+
+.campoEsp{
+	font-style:italic;
+}
+
+.btnImagen {
+  background-color: #f4aa49;
+  border: none;
+  border-radius:10px;
+  padding: 10px 16px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.btnPerfil{
+	border: 1px solid black;
+}
+
+.btnImagen:hover{
+	background-color: #7f5e32;
+}

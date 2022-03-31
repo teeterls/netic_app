@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/perfil.css" type="text/css">
+    <script src="js/perfil.js" type="text/javascript"></script>
+    <title>Hola,${sessionScope.usuario.user}</title>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarheader" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#"><img src="images/imagen%20logo.png" class="mb-3" alt="logo" style="width:40px;"> <span class="mt-5 text-warning">Hola, ${sessionScope.usuario.user}!</span></a>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarheader">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <form action="ServletController" method="post">
+                    <input class="btn btn-warning mt-3" type="submit" value="Mi perfil" name="miperfil">
+                </form>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mt-2" href="ServletDesconexion"><span class="btn btn-warning">Cerrar sesion</span></a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2 btn-outline-warning" id="buscador"type="search" placeholder="Search" aria-label="Search">
+            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+        </form>
+    </div>
+</nav>
+<br><br><br><br><br>
+
+<div class="container">
+<h5 class="mt-3 mr-4 mb-3">¡Añade tu foto!</h5>
+<form enctype="multipart/form-data" id="uploadForm">
+    <div class="btn-group float-right border-dark">
+        <button type="button" class="btn btn-warning"><i class="fas fa-eye "></i> <span class="badge badge-light">4</span></button>
+        <button type="button" class="btn btn-warning"><i class="fas fa-heart "></i> <span class="badge badge-light">4</span></button>
+        <button type="button" class="btn btn-warning"><i class="fas fa-envelope "></i> <span class="badge badge-light">4</span></button>
+    </div>
+    <div class="row btn-outline-warning">
+    <div class="col-1 mr-4 mb-2">
+    <img id="blah" style= "border-radius: 50%"width="100px" height="100px" src="https://via.placeholder.com/150" alt="Tu imagen" />
+    </div>
+        <div class="col-1  mt-2 mx-5">
+        <div class="subirfoto">
+    <input type="file" name="file" id="file" />
+        </div>
+        </div>
+        <div class="ml-3 col-6">
+            <div class="container">
+                <h3>Información general<input class="btn btn-warning ml-2" type="submit" value="Editar perfil" name="editarperfil"></h3>
+              <ul> <li><h4>Nombre y Apellidos</h4></li>
+                  <li> <h5>Sexo</h5></li>
+                  <li> <h5>Ciudad</h5></li>
+              </ul>
+                  <h3>Información de acceso</h3>
+                  <ul>
+                      <li>username</li>
+                      <li>pwd</li>
+                      <li>correo</li>
+                  </ul>
+
+                  <h3>Información personal</h3>
+                  <ul>
+                      <li> <h5>Edad</h5></li>
+                      <li>Estatura</li>
+                      <li>Complexión física</li>
+                      <li>Estado civil</li>
+                      <li>Hijos</li>
+                      <li>Descripcion</li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+
+
+</form>
+
+
+</div>
+
+<script>
+    function filePreview(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+               $('#blah').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#file").change(function () {
+        filePreview(this);
+    });
+
+</script>
+</body>
+</html>

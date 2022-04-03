@@ -10,6 +10,6 @@ In order to make this search engine work properly, several relational databases 
 
 The admin role can manage every user account, and collect simple statistics about the whole users' activity.
 
-This web app is developed using web technologies (HTML, CSS, Bootstrap, Jquery, JScript, JSP) on the front-end side, Java Servlets for back-end and a mysql Database. Regarding software architecture, a DAO Pattern is used, in which a driver tipe 4 (JDBC) is used for the connection with the database.
+This web app is developed using web technologies (HTML, CSS, Bootstrap, Jquery, JScript, JSP, AJAX) on the front-end side, Java Servlets for back-end and a mysql Database. Regarding software architecture, a DAO Pattern is used, in which a driver tipe 4 (JDBC) is used for the connection with the database.
 
 Files .sql (database description) and .war (java executable) are included in this repo.
